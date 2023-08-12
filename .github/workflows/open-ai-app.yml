@@ -20,7 +20,7 @@ on:
         default: true
       releaseNotes:
         description: 'Provide your release notes'
-        type: boolean
+        type: string
         required: true
         default: true
 
