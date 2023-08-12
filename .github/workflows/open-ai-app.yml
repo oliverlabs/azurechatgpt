@@ -79,5 +79,12 @@ jobs:
           app-name: ${{ secrets.AZURE_APP_SERVICE_NAME }}
           package: ${{ github.workspace }}/Nextjs-site.zip
 
+      - name: Publish a Release
+        id: publish-release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ${{ github.workspace }}/Nextjs-site.zip
+
       - name: 🧹 Cleanup
         run: rm ${{ github.workspace }}/Nextjs-site.zip
