@@ -18,6 +18,11 @@ on:
         type: boolean
         required: true
         default: true
+      releaseNotes:
+        description: 'Provide your release notes'
+        type: boolean
+        required: true
+        default: true
 
 env:
   templateRelease: ${{ github.event.inputs.templateRelease }}
@@ -98,7 +103,7 @@ jobs:
 
       - name: Create GitHub release
         run: |
-          GHJSON=$(gh release create ${{env.templateRelease}} '${{ github.workspace }}/Nextjs-site.zip' --latest --generate-notes )
+          GHJSON=$(gh release create ${{env.templateRelease}} '${{ github.workspace }}/Nextjs-site.zip' --latest --generate-notes -n "${{env.releaseNotes}}" )
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           
