@@ -98,7 +98,7 @@ jobs:
 
       - name: Create GitHub release
         run: |
-          GHJSON=$(gh release create ${{env.templateRelease}} '${{ github.workspace }}/Nextjs-site.zip' -p --generate-notes )
+          GHJSON=$(gh release create ${{env.templateRelease}} '${{ github.workspace }}/Nextjs-site.zip' --latest --generate-notes )
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           
