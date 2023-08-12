@@ -16,7 +16,7 @@ on:
       createRelease:
         description: 'Create a NEW release with that tag'
         type: boolean
-        required: false
+        required: true
         default: true
 
 env:
@@ -71,6 +71,7 @@ jobs:
   CreateRelease:
     runs-on: ubuntu-latest
     name: Create a Release
+    needs: [build]
     if: ${{ github.event.inputs.createRelease == 'true' }}
     steps:
       - uses: actions/checkout@v3.3.0
