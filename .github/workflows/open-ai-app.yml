@@ -72,12 +72,12 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: 🚀 Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ secrets.AZURE_APP_SERVICE_NAME }}
-          package: ${{ github.workspace }}/Nextjs-site.zip
+      # - name: 🚀 Deploy to Azure Web App
+      #   id: deploy-to-webapp
+      #   uses: azure/webapps-deploy@v2
+      #   with:
+      #     app-name: ${{ secrets.AZURE_APP_SERVICE_NAME }}
+      #     package: ${{ github.workspace }}/Nextjs-site.zip
 
       - name: Publish a Release
         id: publish-release
