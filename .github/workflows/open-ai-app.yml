@@ -93,13 +93,13 @@ jobs:
                 exit 1
           fi
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Create GitHub release
         run: |
           GHJSON=$(gh release create ${{env.templateRelease}} '${{ github.workspace }}/Nextjs-site.zip' -p --generate-notes )
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           
   # deploy:
   #   runs-on: ubuntu-latest
