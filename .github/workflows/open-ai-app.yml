@@ -82,6 +82,7 @@ jobs:
       - name: Publish a Release
         id: publish-release
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             ${{ github.workspace }}/Nextjs-site.zip
