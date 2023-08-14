@@ -19,12 +19,12 @@ export const transformConversationStyleToTemperature = (
 ) => {
   switch (conversationStyle) {
     case "precise":
-      return 1;
+      return 0.2;
     case "balanced":
       return 0.5;
     case "creative":
-      return 0.1;
+      return 0.7;
     default:
-      return 1;
+      return 0.5;
   }
 };
