@@ -1,9 +1,5 @@
-'use client'
-
-import { useState } from 'react';
-
 import { ProtectedPage } from "@/features/auth/protected-page";
-import { MainMenu } from "@/features/menu/menu";
+import { RptContext } from "./rpt-context";
 import { AI_NAME } from "@/features/theme/customise";
 
 export const metadata = {
@@ -16,10 +12,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <ProtectedPage>
-      <MainMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <RptContext/>
       <div className="flex-1">{children}</div>
     </ProtectedPage>
   );
