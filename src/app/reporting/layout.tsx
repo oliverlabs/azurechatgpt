@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from 'react';
+
 import { ProtectedPage } from "@/features/auth/protected-page";
 import { MainMenu } from "@/features/menu/menu";
 import { AI_NAME } from "@/features/theme/customise";
@@ -12,9 +16,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <ProtectedPage>
-      <MainMenu />
+      <MainMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="flex-1">{children}</div>
     </ProtectedPage>
   );
