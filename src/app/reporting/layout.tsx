@@ -1,5 +1,5 @@
 import { ProtectedPage } from "@/features/auth/protected-page";
-import { MainMenu } from "@/features/menu/menu";
+import { RptContext } from "./rpt-context";
 import { AI_NAME } from "@/features/theme/customise";
 
 export const metadata = {
@@ -7,14 +7,14 @@ export const metadata = {
   description: AI_NAME,
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <ProtectedPage>
-      <MainMenu />
+      <RptContext/>
       <div className="flex-1">{children}</div>
     </ProtectedPage>
   );
